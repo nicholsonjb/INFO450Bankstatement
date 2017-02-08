@@ -15,7 +15,7 @@ class bank
 		void deposit();
 		void withdraw();
 		void checks();
-		void tran_sum(float more, float check, float amt, float balance);
+		void tran_sum(float more, float check, float less, float balance);
 		
 };
 
@@ -30,7 +30,7 @@ void bank :: init()
 void bank::deposit()
 {
 	float more;
-	cout << " Depositing";
+	cout << " Depositing\n";
 	cout << "Enter amount to depost : ";
 	cin >> more;
 	balance += more;
@@ -38,29 +38,29 @@ void bank::deposit()
 //enter withdrawal
 void bank::withdraw()
 {
-	float amt;
-	cout << "     Withdrawl";
+	float less;
+	cout << "     Withdrawl\n";
 	cout << "Enter amount to withdraw : ";
-	cin >> amt;
-	balance -= amt;
+	cin >> less;
+	balance -= less;
 }
  //enter checks
 void bank::checks()
 {
 	float check;
-	cout << "     Withdrawl";
-	cout << "Enter amount to withdraw : ";
+	cout << "     Checks\n";
+	cout << "Enter amount of checks : ";
 	cin >> check;
 	balance -= check;
 }
-//prints transactions summary
-void bank::tran_sum(float more, float check,float amt, float balance)
+//transactions summary
+void bank::tran_sum(float more, float check,float less, float balance)
 {
 	cout << " Transaction Summary";
 	cout << "Begining Balance :  " << balance <<endl;
 	cout << "Total Deposits : " << more << endl;
 	cout << "Total Checks : " << check << endl;
-	cout << "Total Withdrawls : " << amt << endl;
+	cout << "Total Withdrawls : " << less << endl;
 
 }
 int main()
@@ -89,13 +89,16 @@ int main()
 		case 'c':obj.checks();
 			break;
 		case 'Q':
-		case 'q': cout << "Exit!";
-			Continue = false;
+		case 'q':
+			cout << "Exit! \n";
+			     Continue = false;
 			break;
 		default: cout << "Invaild entry! " << endl;
 
 		}
 	}while (Continue);
+	
+	
 	return 0;
 }
 
