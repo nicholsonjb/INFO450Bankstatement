@@ -66,6 +66,7 @@ void bank::tran_sum(float more, float check,float amt, float balance)
 int main()
 {
 	bank obj;
+	bool Continue = true;
 	char choice = 's';
 	do
 	{
@@ -89,11 +90,12 @@ int main()
 			break;
 		case 'Q':
 		case 'q': cout << "Exit!";
+			Continue = false;
 			break;
 		default: cout << "Invaild entry! " << endl;
 
 		}
-	}while (choice == 'q' || choice == 'Q');
+	}while (Continue);
 	return 0;
 }
 
