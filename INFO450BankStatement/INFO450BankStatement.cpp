@@ -15,17 +15,18 @@ class bank
 		void deposit();
 		void withdraw();
 		void checks();
-		void tran_sum(float more, float check);
+		void tran_sum(float more, float check, float amt);
 		
 };
 
-
+//enter balance
 void bank :: init()
 {
-	cout << "Enter account balance";
+	cout << "Enter account balance : ";
 	cin >> balance;
 }
 
+//enter deposits
 void bank::deposit()
 {
 	float more;
@@ -34,7 +35,7 @@ void bank::deposit()
 	cin >> more;
 	balance += more;
 }
-
+//enter withdrawal
 void bank::withdraw()
 {
 	float amt;
@@ -43,7 +44,7 @@ void bank::withdraw()
 	cin >> amt;
 	balance -= amt;
 }
- 
+ //enter checks
 void bank::checks()
 {
 	float check;
@@ -52,8 +53,8 @@ void bank::checks()
 	cin >> check;
 	balance -= check;
 }
-
-void bank::tran_sum(float more, float check)
+//prints transactions summary
+void bank::tran_sum(float more, float check,float amt)
 {
 	cout << " Transaction Summary";
 	cout << "Begining Balance :  " << balance <<endl;
@@ -62,29 +63,37 @@ void bank::tran_sum(float more, float check)
 	cout << "Total Withdrawls : " << amt << endl;
 
 }
-void main(void)
+int main()
 {
-	bank obj
-
-	switch (choice)
+	bank obj;
+	char choice = 's';
+	do
 	{
+		
+		cout << "Enter (W)ithdrawal, (D)eposit, (C)heck, (Q)uit : ";
+		cin >> choice;
 
-	case 'W': 
-	case 'w': obj.withdraw();
-		break;
-	case 'D':
-	case 'd': obj.deposit();
-		break;
-	case 'C' : 
-	case 'c':obj.checks();
-		break;
-	case 'Q':
-	case 'q': 
-		break;
-		default << "Invaild entry! " << endl;
+	
+		switch (choice)
+		{
+		case 's': obj.init();
+			break;
+		case 'W':
+		case 'w': obj.withdraw();
+			break;
+		case 'D':
+		case 'd': obj.deposit();
+			break;
+		case 'C':
+		case 'c':obj.checks();
+			break;
+		case 'Q':
+		case 'q': cout << "Exit!";
+			break;
+		default: cout << "Invaild entry! " << endl;
 
-
-	}
-    return 0;
+		}
+	}while (choice == 'q' || choice == 'Q');
+	return 0;
 }
 
