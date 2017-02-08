@@ -15,7 +15,7 @@ class bank
 		void deposit();
 		void withdraw();
 		void checks();
-		void tran_sum(float more, float check, float amt);
+		void tran_sum(float more, float check, float amt, float balance);
 		
 };
 
@@ -54,7 +54,7 @@ void bank::checks()
 	balance -= check;
 }
 //prints transactions summary
-void bank::tran_sum(float more, float check,float amt)
+void bank::tran_sum(float more, float check,float amt, float balance)
 {
 	cout << " Transaction Summary";
 	cout << "Begining Balance :  " << balance <<endl;
