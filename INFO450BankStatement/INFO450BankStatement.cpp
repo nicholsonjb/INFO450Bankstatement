@@ -65,14 +65,14 @@ int main()
 
 		}
 	} while (choice != 'q' && choice != 'Q');
-	cout << "Transactions Summary" << endl;
+	cout << "\nTransactions Summary" << endl;
 	cout << "---------------------\n";
-	cout << "Beginning Balance:  " << balance << endl;
-	cout << "Total Deposits:     " << totalDeposit << endl;
-	cout << "Total Checks:       " << totalCheck << endl;
-	cout << "Total Withdrawals:  " << totalWithdrawal << endl;
+	cout << "Beginning Balance:  " << fixed << setprecision(2) << balance << endl;
+	cout << "Total Deposits:     "  << fixed << setprecision(2) << totalDeposit << endl;
+	cout << "Total Checks:       " << fixed << setprecision(2) << totalCheck << endl;
+	cout << "Total Withdrawals:  " << fixed << setprecision(2) << totalWithdrawal << endl;
 	cout << "---------------------\n";
-	cout << "Ending Balance: " << balance + totalDeposit - totalCheck - totalWithdrawal << endl;
+	cout << "Ending Balance: " << fixed << setprecision(2) << balance + totalDeposit - totalCheck - totalWithdrawal << endl;
 
 	return 0;
 } //end main
