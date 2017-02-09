@@ -7,98 +7,73 @@
 #include<iomanip>
 using namespace std;
 
-class bank
-{
-	float balance;
-	public: 
-		void init();
-		void deposit();
-		void withdraw();
-		void checks();
-		void tran_sum(float more, float check, float less, float balance);
-		
-};
+//declare variables
+float balance;
+float deposits;
+float check;
+float withdraws;
+float totalDeposit = 0;
+float totalWithdrawal = 0;
+float totalCheck = 0;
+float amt;
+char choice; //choice for selection
 
-//enter balance
-void bank :: init()
-{
-	cout << "Enter account balance : ";
-	cin >> balance;
-}
 
-//enter deposits
-void bank::deposit()
-{
-	float more;
-	cout << " Depositing\n";
-	cout << "Enter amount to depost : ";
-	cin >> more;
-	balance += more;
-}
-//enter withdrawal
-void bank::withdraw()
-{
-	float less;
-	cout << "     Withdrawl\n";
-	cout << "Enter amount to withdraw : ";
-	cin >> less;
-	balance -= less;
-}
- //enter checks
-void bank::checks()
-{
-	float check;
-	cout << "     Checks\n";
-	cout << "Enter amount of checks : ";
-	cin >> check;
-	balance -= check;
-}
-//transactions summary
-void bank::tran_sum(float more, float check,float less, float balance)
-{
-	cout << " Transaction Summary";
-	cout << "Begining Balance :  " << balance <<endl;
-	cout << "Total Deposits : " << more << endl;
-	cout << "Total Checks : " << check << endl;
-	cout << "Total Withdrawls : " << less << endl;
-
-}
 int main()
 {
-	bank obj;
-	bool Continue = true;
-	char choice = 's';
+	//enter balance
+	cout << "Please enter your balance : " << endl;
+	cin >> balance;
+
 	do
 	{
-		
-		cout << "Enter (W)ithdrawal, (D)eposit, (C)heck, (Q)uit : ";
+
+		cout << "Enter (W)ithdrawal, (D)eposit, (C)heck, (Q)uit : \n";
 		cin >> choice;
 
-	
+		//switch statement to calculate transactions
 		switch (choice)
 		{
-		case 's': obj.init();
-			break;
+			//calcuate withdraws
 		case 'W':
-		case 'w': obj.withdraw();
+		case 'w':
+			cout << "Please enter the amount you would like to withdraw :" << endl;
+			cin >> amt;
+			totalWithdrawal += amt;
 			break;
+
+			//calcuate deposits
 		case 'D':
-		case 'd': obj.deposit();
+		case 'd':
+			cout << "Please enter the amount you would like to deposit :" << endl;
+			cin >> amt;
+			totalDeposit += amt;
 			break;
+
+			//calcuate checks
 		case 'C':
-		case 'c':obj.checks();
+		case 'c':
+			cout << "Please enter your check amounts :" << endl;
+			cin >> amt;
+			totalCheck += amt;
 			break;
+			//exits switch statement
 		case 'Q':
 		case 'q':
-			cout << "Exit! \n";
-			     Continue = false;
 			break;
 		default: cout << "Invaild entry! " << endl;
 
 		}
-	}while (Continue);
-	
-	
+	} while (choice != 'q' && choice != 'Q');
+	cout << "Transactions Summary" << endl;
+	cout << "---------------------\n";
+	cout << "Beginning Balance:  " << balance << endl;
+	cout << "Total Deposits:     " << totalDeposit << endl;
+	cout << "Total Checks:       " << totalCheck << endl;
+	cout << "Total Withdrawals:  " << totalWithdrawal << endl;
+	cout << "---------------------\n";
+	cout << "Ending Balance: " << balance + totalDeposit - totalCheck - totalWithdrawal << endl;
+
 	return 0;
-}
+} //end main
 
