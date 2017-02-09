@@ -27,10 +27,10 @@ int main()
 
 	do
 	{
-
+		cout << "Please choose the following transaction options. " << endl;
 		cout << "Enter (W)ithdrawal, (D)eposit, (C)heck, (Q)uit : \n";
-		cin >> choice;
-
+		cin >> choice; 
+		
 		//switch statement to calculate transactions
 		switch (choice)
 		{
