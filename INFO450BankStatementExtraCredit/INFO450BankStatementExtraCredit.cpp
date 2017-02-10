@@ -24,6 +24,8 @@ int main()
 	//enter balance
 	cout << "Please enter your balance : " << endl;
 	cin >> balance;
+	cout << "Enter Transactions" << endl;
+	cout << "---------------------\n";
 
 	do
 	{
