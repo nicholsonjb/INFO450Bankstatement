@@ -14,7 +14,7 @@ float check;
 float withdraws;
 float totalDeposit = 0;
 float totalWithdrawal = 0;
-float totalCheck = 0;
+float totalCheck = 0:
 float amt;
 char choice; //choice for selection
 
