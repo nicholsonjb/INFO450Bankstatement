@@ -66,7 +66,7 @@ int main()
 		default: cout << "Invaild entry! " << endl;
 
 		}
-	} while (choice != 'q' && choice != 'Q', amt = 0, amt < size, amt++);
+	} while (choice != 'q' && choice != 'Q', amt = 0, amt < 10, amt++);
 	cout << "\nTransactions Summary" << endl;
 	cout << "---------------------\n";
 	cout << "Beginning Balance:  " << fixed << setprecision(2) << balance << endl;
