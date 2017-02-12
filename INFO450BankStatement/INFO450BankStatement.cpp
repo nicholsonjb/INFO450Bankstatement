@@ -14,7 +14,7 @@ float check;
 float withdraws;
 float totalDeposit = 0;
 float totalWithdrawal = 0;
-float totalCheck = 0:
+float totalCheck = 0;
 float amt;
 char choice; //choice for selection
 
@@ -72,6 +72,7 @@ int main()
 	cout << "---------------------\n";
 	cout << "Beginning Balance:  " << fixed << setprecision(2) << balance << endl;
 	cout << "Total Deposits:     "  << fixed << setprecision(2) << totalDeposit << endl;
+	cout << amt;
 	cout << "Total Checks:       " << fixed << setprecision(2) << totalCheck << endl;
 	cout << "Total Withdrawals:  " << fixed << setprecision(2) << totalWithdrawal << endl;
 	cout << "---------------------\n";

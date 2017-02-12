@@ -9,13 +9,13 @@ using namespace std;
 
 //declare variables
 float balance;
-float deposits;
-float check;
-float withdraws;
+float deposits[10];
+float check[10];
+float withdraws[10];
 float totalDeposit = 0;
 float totalWithdrawal = 0;
-float totalCheck = 0;
 float amt;
+float totalCheck = 0;
 char choice; //choice for selection
 
 
@@ -41,7 +41,7 @@ int main()
 		case 'w':
 			cout << "Please enter the amount you would like to withdraw :" << endl;
 			cin >> amt;
-			totalWithdrawal += amt;
+			totalWithdrawal += withdraws[amt];
 			break;
 
 			//calcuate deposits
@@ -66,7 +66,7 @@ int main()
 		default: cout << "Invaild entry! " << endl;
 
 		}
-	} while (choice != 'q' && choice != 'Q');
+	} while (choice != 'q' && choice != 'Q', amt = 0, amt < size, amt++);
 	cout << "\nTransactions Summary" << endl;
 	cout << "---------------------\n";
 	cout << "Beginning Balance:  " << fixed << setprecision(2) << balance << endl;
