@@ -9,7 +9,7 @@ using namespace std;
 
 //declare variables
 float balance;
-float populateDeposits(float depositsArray[], float number);
+
 float check[10];
 float withdraws[10];
 float totalDeposit = 0;
@@ -17,6 +17,8 @@ float totalWithdrawal = 0;
 float amt;
 float totalCheck = 0;
 char choice; //choice for selection
+void displayDeposits(double depositsArray[], int number);
+int populateDeposits(double depositsArray[], int number);
 
 
 int main()
@@ -66,7 +68,7 @@ int main()
 		default: cout << "Invaild entry! " << endl;
 
 		}
-	} while (choice != 'q' && choice != 'Q', amt = 0, amt < 10, amt++);
+	} while (choice != 'q' && choice != 'Q');
 	
 	//Transaction Summary output
 	cout << "\nTransactions Summary" << endl;
@@ -81,7 +83,7 @@ int main()
 	//Array call
 	double deposits[10] = {};
 	populateDeposits(deposits, 10);
-
+	displayDeposits(deposits, 10);
 	return 0;
 
 	
@@ -90,10 +92,16 @@ int main()
 
 //populate deposits array function
 int populateDeposits(double depositsArray[], int number) {
-	double amt;
+
 	int i;
 	for (i = 0; i < number; i++) {
 		depositsArray[i] = amt;
 	}
 	return i;
+}
+
+void displayDeposits(double depositsArray[], int number) {
+	for (int i = 0; i < number; i++)
+		cout << "Deposits: " << (i + 1) << depositsArray[i] << endl;
+
 }
