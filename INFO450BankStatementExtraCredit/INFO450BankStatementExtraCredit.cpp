@@ -9,16 +9,16 @@ using namespace std;
 
 //declare variables
 float balance;
+const int  MAXENTRY = 10;
 
-float check[10];
-float withdraws[10];
+int numDeposits = 0;
 float totalDeposit = 0;
 float totalWithdrawal = 0;
 float amt;
 float totalCheck = 0;
+float addDeposits[MAXENTRY];
 char choice; //choice for selection
-void displayDeposits(double depositsArray[], int number);
-int populateDeposits(double depositsArray[], int number);
+
 
 
 int main()
@@ -52,6 +52,8 @@ int main()
 			cout << "Please enter the amount you would like to deposit :" << endl;
 			cin >> amt;
 			totalDeposit += amt;
+			addDeposits[numDeposits] = amt;
+			numDeposits++;
 			break;
 
 			//calcuate checks
@@ -69,7 +71,12 @@ int main()
 
 		}
 	} while (choice != 'q' && choice != 'Q');
-	
+	// for deposits loop here
+	for (int i = 0; i < numDeposits; i++) {
+		cout << addDeposits[i] << endl;
+	}
+
+
 	//Transaction Summary output
 	cout << "\nTransactions Summary" << endl;
 	cout << "---------------------\n";
@@ -80,28 +87,8 @@ int main()
 	cout << "---------------------\n";
 	cout << "Ending Balance: " << fixed << setprecision(2) << balance + totalDeposit - totalCheck - totalWithdrawal << endl;
 	 
-	//Array call
-	double deposits[10] = {};
-	populateDeposits(deposits, 10);
-	displayDeposits(deposits, 10);
-	return 0;
+	
 
 	
 	
 } //end main
-
-//populate deposits array function
-int populateDeposits(double depositsArray[], int number) {
-
-	int i;
-	for (i = 0; i < number; i++) {
-		depositsArray[i] = amt;
-	}
-	return i;
-}
-
-void displayDeposits(double depositsArray[], int number) {
-	for (int i = 0; i < number; i++)
-		cout << "Deposits: " << (i + 1) << depositsArray[i] << endl;
-
-}
