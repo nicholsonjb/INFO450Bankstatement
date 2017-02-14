@@ -10,13 +10,16 @@ using namespace std;
 //declare variables
 float balance;
 const int  MAXENTRY = 10;
-
 int numDeposits = 0;
 float totalDeposit = 0;
+int numWithdraws = 0;
 float totalWithdrawal = 0;
-float amt;
+int numChecks = 0;
 float totalCheck = 0;
-float addDeposits[MAXENTRY];
+float Checks[MAXENTRY];
+float Deposits[MAXENTRY];
+float Witdraws[MAXENTRY];
+float amt;
 char choice; //choice for selection
 
 
@@ -44,6 +47,8 @@ int main()
 			cout << "Please enter the amount you would like to withdraw :" << endl;
 			cin >> amt;
 			totalWithdrawal += amt;
+			Witdraws[numWithdraws] = amt;
+			numWithdraws++;
 			break;
 
 			//calcuate deposits
@@ -52,7 +57,7 @@ int main()
 			cout << "Please enter the amount you would like to deposit :" << endl;
 			cin >> amt;
 			totalDeposit += amt;
-			addDeposits[numDeposits] = amt;
+			Deposits[numDeposits] = amt;
 			numDeposits++;
 			break;
 
@@ -62,6 +67,8 @@ int main()
 			cout << "Please enter your check amounts :" << endl;
 			cin >> amt;
 			totalCheck += amt;
+			Checks[numChecks] = amt;
+			numChecks++;
 			break;
 			//exits switch statement
 		case 'Q':
@@ -72,20 +79,44 @@ int main()
 		}
 	} while (choice != 'q' && choice != 'Q');
 	// for deposits loop here
-	for (int i = 0; i < numDeposits; i++) {
-		cout << addDeposits[i] << endl;
-	}
+
+	//check loop here
+
+	//withdraw loop here
 
 
 	//Transaction Summary output
 	cout << "\nTransactions Summary" << endl;
 	cout << "---------------------\n";
-	cout << "Beginning Balance:  " << fixed << setprecision(2) << balance << endl;
-	cout << "Total Deposits:     " << fixed << setprecision(2) << totalDeposit << endl;
-	cout << "Total Checks:       " << fixed << setprecision(2) << totalCheck << endl;
-	cout << "Total Withdrawals:  " << fixed << setprecision(2) << totalWithdrawal << endl;
+	cout << "Beginning Balance:  "  <<    fixed << setprecision(2) << balance << endl;
+
+	//displays number of deposits
+	for (int i = 0; i < numDeposits; i++) {
+		cout << "\nDeposit " << i + 1 << ": " << setw(7)<< fixed << setprecision(2)<< Deposits[i] << endl;
+	}
+	//displays total deposits
+	cout << "Total Deposits: " << setw(7)<< fixed << setprecision(2) << totalDeposit << endl;
+
+	//displays number of checks
+	for (int i = 0; i < numChecks; i++) {
+		cout << "\nCheck " <<  i+1 <<": " << setw(7) << fixed << setprecision(2)<< Checks[i] << endl;
+	}
+	
+	//display total checks
+	cout << "Total Checks: " << setw(7)<< setprecision(2) << totalCheck << endl;
+
+	//diplays number of withdraws
+	for (int i = 0; i < numWithdraws; i++) {
+		cout << "\nWithdraw " <<  i + 1 << ": " << setw(7)<< fixed << setprecision(2) << Witdraws[i] << endl;
+	}
+
+	//displays total withdrawal
+	cout << "Total Withdrawals: "  << setw(7)<< fixed << setprecision(2) << totalWithdrawal << endl;
+	
+
 	cout << "---------------------\n";
-	cout << "Ending Balance: " << fixed << setprecision(2) << balance + totalDeposit - totalCheck - totalWithdrawal << endl;
+
+	cout << "Ending Balance: "  << setw(7)<< fixed << setprecision(2) << balance + totalDeposit - totalCheck - totalWithdrawal << endl;
 	 
 	
 
