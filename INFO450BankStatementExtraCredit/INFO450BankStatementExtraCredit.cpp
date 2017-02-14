@@ -1,4 +1,11 @@
 // INFO450BankStatement.cpp : Defines the entry point for the console application.
+/* BankStatement Calculator
+Author: James Nicholson
+Purpose: A program  that collects input from the  user to track transactions  made on a bank account. 
+These transactions include :  Withdrawals,  Checks and Deposits. Topics covered are console input & output, loops, 
+conditional statements.
+*/
+
 //
 
 #include "stdafx.h"
@@ -9,6 +16,8 @@ using namespace std;
 
 //declare variables
 float balance;
+char choice; 
+float amt;
 const int  MAXENTRY = 10;
 int numDeposits = 0;
 float totalDeposit = 0;
@@ -19,18 +28,18 @@ float totalCheck = 0;
 float Checks[MAXENTRY];
 float Deposits[MAXENTRY];
 float Witdraws[MAXENTRY];
-float amt;
-char choice; //choice for selection
+
 
 
 
 int main()
 {
 	//enter balance
-	cout << "Please enter your balance : " << endl;
+	cout << "Greetings!" << endl;
+	cout << "\nPlease enter your balance: " << endl;
 	cin >> balance;
-	cout << "Enter Transactions" << endl;
-	cout << "---------------------\n";
+	cout << "\nEnter Transactions" << endl;
+	cout << "\n---------------------\n";
 
 	do
 	{
@@ -78,45 +87,46 @@ int main()
 
 		}
 	} while (choice != 'q' && choice != 'Q');
-	// for deposits loop here
-
-	//check loop here
-
-	//withdraw loop here
-
 
 	//Transaction Summary output
 	cout << "\nTransactions Summary" << endl;
 	cout << "---------------------\n";
-	cout << "Beginning Balance:  "  <<    fixed << setprecision(2) << balance << endl;
+	cout << "Beginning Balance: "  <<    fixed << setprecision(2) << balance << endl;
 
-	//displays number of deposits
+	//loop that displays number of deposits in an array
+	cout << "\n*Deposits: " << endl;
 	for (int i = 0; i < numDeposits; i++) {
-		cout << "\nDeposit " << i + 1 << ": " << setw(7)<< fixed << setprecision(2)<< Deposits[i] << endl;
+		cout << setw(25)<< fixed << setprecision(2)<< Deposits[i] << endl;
 	}
 	//displays total deposits
-	cout << "Total Deposits: " << setw(7)<< fixed << setprecision(2) << totalDeposit << endl;
-
-	//displays number of checks
+	cout <<  setw(26) << "--------\n";
+	cout << "Total Deposits: " << setw(9)<< fixed << setprecision(2) << totalDeposit << endl;
+	
+	//loop that displays number of chckes in an array
+	cout << "\n*Checks: " << endl;
 	for (int i = 0; i < numChecks; i++) {
-		cout << "\nCheck " <<  i+1 <<": " << setw(7) << fixed << setprecision(2)<< Checks[i] << endl;
+		cout << setw(25) << fixed << setprecision(2)<< Checks[i] << endl;
 	}
 	
 	//display total checks
-	cout << "Total Checks: " << setw(7)<< setprecision(2) << totalCheck << endl;
-
-	//diplays number of withdraws
+	cout << setw(26) << "--------\n";
+	cout << "Total Checks: " << setw(11)<< setprecision(2) << totalCheck << endl;
+	
+	//loop that displays number of withdrawls in an array
+	cout << "\n*Withdrawals : " << endl;
 	for (int i = 0; i < numWithdraws; i++) {
-		cout << "\nWithdraw " <<  i + 1 << ": " << setw(7)<< fixed << setprecision(2) << Witdraws[i] << endl;
+		cout  << setw(25)<< fixed << setprecision(2) << Witdraws[i] << endl;
 	}
 
 	//displays total withdrawal
-	cout << "Total Withdrawals: "  << setw(7)<< fixed << setprecision(2) << totalWithdrawal << endl;
+	cout << setw(26) << "--------\n";
+
+	cout << "Total Withdrawals: "  << setw(6)<< fixed << setprecision(2) << totalWithdrawal << endl;
 	
 
-	cout << "---------------------\n";
+	cout << "\n-------------------------\n";
 
-	cout << "Ending Balance: "  << setw(7)<< fixed << setprecision(2) << balance + totalDeposit - totalCheck - totalWithdrawal << endl;
+	cout << "Ending Balance: "  << setw(9)<< fixed << setprecision(2) << balance + totalDeposit - totalCheck - totalWithdrawal << endl;
 	 
 	
 
