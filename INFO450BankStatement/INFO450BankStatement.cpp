@@ -68,11 +68,13 @@ int main()
 	cout << "\nTransactions Summary" << endl;
 	cout << "---------------------\n";
 	cout << "Beginning Balance:  " << fixed << setprecision(2) << balance << endl;
-	cout << "Total Deposits:     "  << fixed << setprecision(2) << totalDeposit << endl;
-	cout << "Total Checks:       " << fixed << setprecision(2) << totalCheck << endl;
-	cout << "Total Withdrawals:  " << fixed << setprecision(2) << totalWithdrawal << endl;
+	cout << "Total Deposits: " << setw(9) << fixed << setprecision(2) << totalDeposit << endl;
+	cout << "Total Checks: " << setw(11) << setprecision(2) << totalCheck << endl;
+	cout << "Total Withdrawals: " << setw(6) << fixed << setprecision(2) << totalWithdrawal << endl;
 	cout << "---------------------\n";
-	cout << "Ending Balance: " << fixed << setprecision(2) << balance + totalDeposit - totalCheck - totalWithdrawal << endl;
+	cout << "Ending Balance: "
+		<< setw(9) << fixed << setprecision(2)
+		<< balance + totalDeposit - totalCheck - totalWithdrawal << endl;
 
 	return 0;
 } //end main
