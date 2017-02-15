@@ -122,13 +122,11 @@ int main()
 	cout << setw(26) << "--------\n";
 
 	cout << "Total Withdrawals: "  << setw(6)<< fixed << setprecision(2) << totalWithdrawal << endl;
-	
-
 	cout << "\n-------------------------\n";
 
-	cout << "Ending Balance: "  << setw(9)<< fixed << setprecision(2) << balance + totalDeposit - totalCheck - totalWithdrawal << endl;
-	 
-	
+	cout << "Ending Balance: "  
+		<< setw(9)<< fixed << setprecision(2) 
+		<< balance + totalDeposit - totalCheck - totalWithdrawal << endl;
 
 	
 	

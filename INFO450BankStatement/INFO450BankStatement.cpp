@@ -9,9 +9,6 @@ using namespace std;
 
 //declare variables
 float balance;
-float deposits;
-float check;
-float withdraws;
 float totalDeposit = 0;
 float totalWithdrawal = 0;
 float totalCheck = 0;
