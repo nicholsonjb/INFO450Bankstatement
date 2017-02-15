@@ -39,7 +39,7 @@ int main()
 	cout << "\nPlease enter your balance: " << endl;
 	cin >> balance;
 	cout << "\nEnter Transactions" << endl;
-	cout << "\n---------------------\n";
+	cout << "---------------------\n" << endl;
 
 	do
 	{
