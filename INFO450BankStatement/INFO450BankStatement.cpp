@@ -19,10 +19,12 @@ char choice; //choice for selection
 int main()
 {
 	//enter balance
-	cout << "Please enter your balance : " << endl;
+	//enter balance
+	cout << "Greetings!" << endl;
+	cout << "\nPlease enter your balance: " << endl;
 	cin >> balance;
-	cout << "Enter Transactions " << endl;
-	cout << "---------------------\n";
+	cout << "\nEnter Transactions" << endl;
+	cout << "\n---------------------\n";
 
 
 	do
@@ -68,12 +70,12 @@ int main()
 	cout << "\nTransactions Summary" << endl;
 	cout << "---------------------\n";
 	cout << "Beginning Balance:  " << fixed << setprecision(2) << balance << endl;
-	cout << "Total Deposits: " << setw(9) << fixed << setprecision(2) << totalDeposit << endl;
-	cout << "Total Checks: " << setw(11) << setprecision(2) << totalCheck << endl;
-	cout << "Total Withdrawals: " << setw(6) << fixed << setprecision(2) << totalWithdrawal << endl;
+	cout << "Total Deposits: " << setw(10) << fixed << setprecision(2) << totalDeposit << endl;
+	cout << "Total Checks: " << setw(12) << setprecision(2) << totalCheck << endl;
+	cout << "Total Withdrawals: " << setw(7) << fixed << setprecision(2) << totalWithdrawal << endl;
 	cout << "---------------------\n";
 	cout << "Ending Balance: "
-		<< setw(9) << fixed << setprecision(2)
+		<< setw(10) << fixed << setprecision(2)
 		<< balance + totalDeposit - totalCheck - totalWithdrawal << endl;
 
 	return 0;
