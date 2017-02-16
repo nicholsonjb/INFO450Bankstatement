@@ -1,5 +1,10 @@
 // INFO450BankStatement.cpp : Defines the entry point for the console application.
-//
+/* BankStatement Calculator
+Author: James Nicholson
+Purpose: A program  that collects input from the  user to track transactions  made on a bank account.
+These transactions include :  Withdrawals,  Checks and Deposits. Topics covered are console input & output, loops,
+conditional statements.
+*/
 
 #include "stdafx.h"
 #include<conio.h>
