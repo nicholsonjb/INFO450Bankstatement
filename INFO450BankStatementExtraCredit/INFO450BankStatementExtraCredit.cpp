@@ -91,7 +91,7 @@ int main()
 	//Transaction Summary output
 	cout << "\nTransactions Summary" << endl;
 	cout << "-------------------------\n";
-	cout << "Beginning Balance: "  <<    fixed << setprecision(2) << balance << endl;
+	cout << "Beginning Balance: "  << setw(2) << fixed << setprecision(2) << balance << endl;
 
 	//loop that displays number of deposits in an array
 	cout << "\n*Deposits: " << endl;
