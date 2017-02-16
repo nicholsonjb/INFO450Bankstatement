@@ -74,7 +74,7 @@ int main()
 	} while (choice != 'q' && choice != 'Q');
 	cout << "\nTransactions Summary" << endl;
 	cout << "--------------------------\n";
-	cout << "Beginning Balance:  " << fixed << setprecision(2) << balance << endl;
+	cout << "Beginning Balance:  " << setw(2) << fixed << setprecision(2) << balance << endl;
 	cout << "Total Deposits: " << setw(10) << fixed << setprecision(2) << totalDeposit << endl;
 	cout << "Total Checks: " << setw(12) << setprecision(2) << totalCheck << endl;
 	cout << "Total Withdrawals: " << setw(7) << fixed << setprecision(2) << totalWithdrawal << endl;
